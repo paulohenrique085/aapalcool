@@ -17,9 +17,9 @@ class _HomeState extends State<Home> {
     //convertendo de string para double uso o metodo tryparse pois
     //se o usuario digitar algo invalido ele permite retornar uma mensagem
     double precoAlcool = double.tryParse(_controllerAlcool.text);
-    double precoGasolina = double.tryParse(_controllerAlcool.text);
+    double precoGasolina = double.tryParse(_controllerGasolina.text);
 
-    if (precoAlcool == null && precoGasolina == null) {
+    if (precoAlcool == null || precoGasolina == null) {
       setState(() {
         _textoResultado =
             "Valor inválido, digite números maiores que 0, e ultilizando (.)";
@@ -60,9 +60,11 @@ class _HomeState extends State<Home> {
                       keyboardType: TextInputType.number,
                       //retirando linha textfild
                       decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Preço Álcool  ex: 3.58",
-                      ),
+                          border: InputBorder.none,
+                          labelText: "Preço Álcool  ex: 3.58",
+                          labelStyle: TextStyle(
+                            color: Colors.grey,
+                          )),
                       //estilo do texto que entra
                       style: TextStyle(fontSize: 20),
                       //pegando o que o usuário digitou
@@ -77,9 +79,11 @@ class _HomeState extends State<Home> {
                       keyboardType: TextInputType.number,
                       //retirando linha textfild
                       decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Preço Gasolina  ex: 3.32",
-                      ),
+                          border: InputBorder.none,
+                          labelText: "Preço Gasolina  ex: 3.32",
+                          labelStyle: TextStyle(
+                            color: Colors.grey,
+                          )),
                       //estilo do texto que entra
                       style: TextStyle(fontSize: 20),
                       //pegando o que o usuário digitou
