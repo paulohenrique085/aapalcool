@@ -27,11 +27,11 @@ class _HomeState extends State<Home> {
     } else {
       if ((precoAlcool / precoGasolina) >= 0.7) {
         setState(() {
-          _textoResultado = "Melhor abastecer com Álcool";
+          _textoResultado = "Melhor abastecer com Gasolina";
         });
       } else {
         setState(() {
-          _textoResultado = "Melhor abastecer com gasolina";
+          _textoResultado = "Melhor abastecer com Álcool";
         });
       }
     }
@@ -52,6 +52,19 @@ class _HomeState extends State<Home> {
                   width: 200,
                   height: 140,
                   child: Image.asset("assets/icone.png"),
+                ),
+                Center(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 30, left: 60),
+                    child: Text(
+                      "Saiba qual combustível mais econômico para o seu carro:",
+                      style: TextStyle(
+                        color: Color(0xFF3f51b5),
+                        fontSize: 19,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ),
                 Center(
                   child: Padding(
@@ -111,7 +124,7 @@ class _HomeState extends State<Home> {
                 ),
                 Center(
                   child: Padding(
-                    padding: EdgeInsets.only(top: 30, left: 30),
+                    padding: EdgeInsets.only(top: 12, left: 20),
                     child: Text(
                       _textoResultado,
                       style: TextStyle(
