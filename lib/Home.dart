@@ -19,7 +19,10 @@ class _HomeState extends State<Home> {
     double precoAlcool = double.tryParse(_controllerAlcool.text);
     double precoGasolina = double.tryParse(_controllerGasolina.text);
 
-    if (precoAlcool == null || precoGasolina == null) {
+    if (precoAlcool == null ||
+        precoGasolina == null ||
+        precoAlcool == 0 ||
+        precoGasolina == 0) {
       setState(() {
         _textoResultado =
             "Valor inválido, digite números maiores que 0, e ultilizando (.)";
